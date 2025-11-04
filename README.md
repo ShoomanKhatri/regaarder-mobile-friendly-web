@@ -1,4 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Regaarder - Video Request Platform
+
+A modern, mobile-first video request platform built with Next.js 14, TypeScript, and Tailwind CSS.
+
+## 🚀 Features
+
+- **Home/Feed Page**: Discover videos with tabs for Recommended, Trending, and Requested content
+- **Request Details**: Browse and interact with video requests from creators
+- **Progress Tracking**: Track your video booking progress with visual indicators
+- **Creator Profiles**: View detailed creator information, stats, and content
+- **Video Details**: Full video information with metadata and creator details
+- **Authentication**: Login/Signup pages with modern design
+- **Responsive Design**: Mobile-first with breakpoints at 640px, 1024px, and 1280px
+
+## 🎨 Design System
+
+### Colors
+
+- **Primary Orange**: `#f59e0b`
+- **Success Green**: `#10b981`
+- **Gray**: `#d1d5db`
+
+### Typography
+
+- **Font Family**: Inter (sans-serif)
+- **Font Sizes**: 14px - 20px
+- **Font Weights**: 400, 500, 600, 700
+
+### Spacing
+
+- Based on 8px grid system
+- Consistent padding and margins throughout
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Fonts**: Next.js Font Optimization (Inter)
 
 ## Getting Started
 
