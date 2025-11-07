@@ -48,16 +48,17 @@ export default function RequestsPage() {
     <div className="min-h-screen bg-gray-50 pb-20">
       <Header notificationCount={6} />
 
-      <main className="px-4 pt-4 space-y-4">
-        <SearchBar placeholder="Search requests..." />
+      <main className="px-4 py-4">
+        <SearchBar placeholder="Search requests..." className="mb-4" />
 
         <TabNavigation
           tabs={tabs}
           activeTab={activeTab}
           onTabChange={setActiveTab}
+          className="mb-6"
         />
 
-        <div className="space-y-4 pb-4">
+        <div className="space-y-4">
           {requests.map((request) => (
             <RequestCard
               key={request.id}

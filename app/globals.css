@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  /* Regaarder Brand Colors */
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --secondary: #f8fafc;
-  --muted: #cbd5e1;
-  --muted-foreground: #64748b;
-  --border: #e2e8f0;
+  /* Regaarder Brand Colors - Exact Match */
+  --background: #f8f9fa;
+  --foreground: #1a1a1a;
+  --secondary: #f1f3f5;
+  --muted: #adb5bd;
+  --muted-foreground: #868e96;
+  --border: #dee2e6;
   --accent: #ca8a04;
-  --accent-yellow: #fbbf24;
-  --accent-green: #10b981;
-  --accent-purple: #a855f7;
-  --accent-red: #ef4444;
+  --accent-yellow: #f59f00;
+  --accent-green: #51cf66;
+  --accent-purple: #9775fa;
+  --accent-red: #ff6b6b;
   --card: #ffffff;
-  --card-foreground: #0f172a;
+  --card-foreground: #212529;
 }
 
 * {

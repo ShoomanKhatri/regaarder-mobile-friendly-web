@@ -46,8 +46,8 @@ export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-border z-50 safe-area-inset">
-      <div className="flex items-center justify-around px-2 py-2">
+    <nav className="bg-white border-t border-gray-200 z-50">
+      <div className="flex items-center justify-around px-2 py-3">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
 
@@ -56,30 +56,20 @@ export function BottomNav() {
               key={item.id}
               href={item.href}
               className={cn(
-                "relative flex flex-col items-center gap-1 py-2 px-4 rounded-lg transition-all min-w-16",
+                "relative flex flex-col items-center gap-1 py-1 px-4 rounded-lg transition-all min-w-16",
                 isActive
-                  ? "text-accent"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "text-amber-400"
+                  : "text-gray-500 hover:text-gray-700"
               )}
               aria-label={item.label}
               aria-current={isActive ? "page" : undefined}
             >
-              <div
-                className={cn(
-                  "relative transition-transform",
-                  isActive && "scale-110"
-                )}
-              >
+              <div className={cn("relative", isActive && "scale-110")}>
                 {item.icon}
-                {item.badge && (
-                  <div className="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
-                    {item.badge}
-                  </div>
-                )}
               </div>
               <span
                 className={cn(
-                  "text-xs font-medium transition-colors",
+                  "text-xs font-medium",
                   isActive && "font-semibold"
                 )}
               >

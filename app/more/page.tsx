@@ -47,7 +47,7 @@ export default function MorePage() {
               <Button
                 variant="primary"
                 size="lg"
-                className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-black font-semibold"
+                className="w-full flex items-center justify-center gap-2"
               >
                 <ArrowRight className="w-5 h-5" />
                 Log In / Sign Up

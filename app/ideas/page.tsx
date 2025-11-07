@@ -18,7 +18,7 @@ export default function IdeasPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-linear-to-b from-orange-50 to-white pb-20">
       <Header notificationCount={6} />
 
       <main className="px-4 py-8">
@@ -29,8 +29,8 @@ export default function IdeasPage() {
           className="mb-8"
         >
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-muted-foreground">Progress</span>
-            <span className="text-sm font-bold text-accent">
+            <span className="text-sm text-gray-600">Progress</span>
+            <span className="text-sm font-bold text-orange-500">
               {progress}% complete
             </span>
           </div>
@@ -39,7 +39,7 @@ export default function IdeasPage() {
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="h-full bg-accent"
+              className="h-full bg-orange-500"
             />
           </div>
         </motion.div>
@@ -50,11 +50,11 @@ export default function IdeasPage() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center mb-12"
         >
-          <h1 className="text-3xl font-bold text-accent mb-4">
+          <h1 className="text-3xl font-bold text-orange-500 mb-4">
             Book Your Next Videos
           </h1>
 
-          <div className="flex items-center justify-center gap-2 text-muted-foreground mb-8">
+          <div className="flex items-center justify-center gap-2 text-gray-500 mb-8">
             <Clock className="w-5 h-5" />
             <span className="text-sm">About 2 minutes to complete</span>
           </div>

@@ -1,15 +1,12 @@
 "use client";
 
 import React from "react";
-import { Star, TrendingUp, Trophy } from "lucide-react";
+import { Star, TrendingUp, CheckCircle } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { BottomNav } from "@/components/layout/BottomNav";
-import { SearchBar } from "@/components/ui/SearchBar";
 import { TabNavigation } from "@/components/ui/TabNavigation";
 import { VideoCard } from "@/components/features/VideoCard";
-import { FloatingActionButton } from "@/components/ui/FloatingActionButton";
 import { Video, TabItem } from "@/types";
-import { useRouter } from "next/navigation";
 
 const tabs: TabItem[] = [
   {
@@ -23,9 +20,9 @@ const tabs: TabItem[] = [
     icon: <TrendingUp className="w-4 h-4" />,
   },
   {
-    id: "challenges",
-    label: "Challenges",
-    icon: <Trophy className="w-4 h-4" />,
+    id: "requested",
+    label: "Requested",
+    icon: <CheckCircle className="w-4 h-4" />,
   },
 ];
 
@@ -53,29 +50,28 @@ const mockVideos: Video[] = [
   },
   {
     id: "2",
-    title: "The Future of AI and Machine Learning",
+    title: "The Evolution of Modern Technology",
     thumbnail:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=450&fit=crop",
     duration: "8:15",
-    views: 25000,
+    views: 15000,
     creator: {
-      id: "tech-guru",
-      name: "Tech Guru",
-      username: "techguru",
+      id: "tech-master",
+      name: "Tech Master",
+      username: "techmaster",
       avatar:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop",
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
       isVerified: true,
       isTopCreator: false,
       rating: 4.5,
     },
-    requestedBy: "AIEnthusiast",
+    requestedBy: "PixelDreamer",
     timestamp: "2 weeks ago",
     isRequested: true,
   },
 ];
 
 export default function Home() {
-  const router = useRouter();
   const [activeTab, setActiveTab] = React.useState("recommended");
   const [videos, setVideos] = React.useState(mockVideos);
 
@@ -84,32 +80,24 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
-      <Header notificationCount={6} />
+    <div className="w-full max-w-sm bg-gradient-to-br from-gray-100 to-gray-50 rounded-3xl shadow-2xl overflow-hidden flex flex-col min-h-screen mx-auto">
+      <Header notificationCount={2} />
 
-      <main className="px-4 pt-4 space-y-4">
-        <SearchBar placeholder="Discover videos..." />
+      {/* Tab Navigation */}
+      <TabNavigation
+        tabs={tabs}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+      />
 
-        <TabNavigation
-          tabs={tabs}
-          activeTab={activeTab}
-          onTabChange={setActiveTab}
-        />
+      {/* Video Feed */}
+      <div className="flex-1 overflow-y-auto bg-white px-4 py-4 space-y-4">
+        {videos.map((video) => (
+          <VideoCard key={video.id} video={video} />
+        ))}
+      </div>
 
-        <div className="space-y-4 pb-4">
-          {videos.map((video) => (
-            <VideoCard
-              key={video.id}
-              video={video}
-              onClose={() => handleCloseVideo(video.id)}
-            />
-          ))}
-        </div>
-      </main>
-
-      {/* Floating Action Button */}
-      <FloatingActionButton onClick={() => router.push("/ideas")} />
-
+      {/* Bottom Navigation */}
       <BottomNav />
     </div>
   );

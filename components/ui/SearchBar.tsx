@@ -30,7 +30,7 @@ export function SearchBar({
   return (
     <div className={cn("relative w-full", className)}>
       <Search
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/60"
         aria-hidden="true"
       />
       <input
@@ -38,13 +38,13 @@ export function SearchBar({
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
-        className="w-full pl-12 pr-10 py-3.5 h-12 bg-white border border-border text-foreground placeholder-muted-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all text-base"
+        className="w-full pl-11 pr-4 py-3.5 h-[52px] bg-secondary border-0 text-foreground placeholder-muted-foreground/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all text-[15px]"
         aria-label={placeholder}
       />
       {value && (
         <button
           onClick={handleClear}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-secondary rounded-full transition-colors"
+          className="absolute right-3 top-1/2 -translate-y-1/2 p-1 hover:bg-muted/20 rounded-full transition-colors"
         >
           <X className="w-4 h-4 text-muted-foreground" />
         </button>

@@ -60,6 +60,37 @@ export const mockVideos: Video[] = [
         timestamp: '3 days ago',
         isRequested: false,
     },
+    {
+        id: '4',
+        title: 'The Mystery of the Bermuda Triangle Explained',
+        thumbnail: '/placeholder-video.jpg',
+        duration: '6:45',
+        views: 9500,
+        creator: mockCreators[0],
+        requestedBy: 'SeaExplorer',
+        timestamp: '5 days ago',
+        isRequested: true,
+    },
+    {
+        id: '5',
+        title: 'Medieval Europe: Castles and Knights',
+        thumbnail: '/placeholder-video.jpg',
+        duration: '10:20',
+        views: 11200,
+        creator: mockCreators[0],
+        timestamp: '1 week ago',
+        isRequested: false,
+    },
+    {
+        id: '6',
+        title: 'Space Exploration: Journey to Mars',
+        thumbnail: '/placeholder-video.jpg',
+        duration: '15:00',
+        views: 18000,
+        creator: mockCreators[0],
+        timestamp: '2 weeks ago',
+        isRequested: false,
+    },
 ];
 
 export const mockRequests: Request[] = [

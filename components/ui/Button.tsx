@@ -21,13 +21,12 @@ export function Button({
 
   const variants = {
     primary:
-      "bg-accent text-black hover:bg-accent/90 focus:ring-accent font-semibold",
+      "bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500",
     secondary:
-      "bg-white text-foreground border border-border hover:bg-secondary focus:ring-accent",
+      "bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 focus:ring-gray-500",
     outline:
-      "bg-transparent border-2 border-accent text-accent hover:bg-accent/10 focus:ring-accent",
-    ghost:
-      "bg-transparent text-foreground hover:bg-secondary focus:ring-accent",
+      "bg-transparent border-2 border-orange-500 text-orange-500 hover:bg-orange-50 focus:ring-orange-500",
+    ghost: "bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-500",
   };
 
   const sizes = {
