@@ -3,7 +3,22 @@
 import { ChevronLeft, Star, Share2 } from "lucide-react";
 import BottomNav from "@/app/components/bottom-nav";
 
-export default function CreatorProfilePage({ creator, onNavigate, onBack }) {
+type Creator = {
+  name?: string;
+  avatar?: string;
+};
+
+type CreatorProfilePageProps = {
+  creator?: Creator;
+  onNavigate?: (page: string) => void;
+  onBack?: () => void;
+};
+
+export default function CreatorProfilePage({
+  creator,
+  onNavigate,
+  onBack,
+}: CreatorProfilePageProps) {
   const videos = [
     {
       id: 1,

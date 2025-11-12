@@ -3,7 +3,11 @@
 import { ChevronLeft } from "lucide-react";
 import BottomNav from "@/app/components/bottom-nav";
 
-export default function MorePage({ onNavigate }) {
+type MorePageProps = {
+  onNavigate?: (page: string) => void;
+};
+
+export default function MorePage({ onNavigate }: MorePageProps) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-2xl h-screen max-h-[812px] lg:max-h-screen lg:h-auto lg:min-h-screen flex flex-col">
       {/* Status Bar */}
@@ -17,7 +21,7 @@ export default function MorePage({ onNavigate }) {
 
       {/* Header */}
       <div className="bg-white px-6 py-4 border-b border-gray-100 flex items-center gap-4">
-        <button onClick={() => onNavigate("home")}>
+        <button onClick={() => onNavigate?.("home")}>
           <ChevronLeft className="w-6 h-6 text-gray-900" />
         </button>
         <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">More</h1>

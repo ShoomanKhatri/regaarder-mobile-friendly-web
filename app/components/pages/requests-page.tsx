@@ -4,7 +4,11 @@ import { useState } from "react";
 import { Search, X } from "lucide-react";
 import BottomNav from "@/app/components/bottom-nav";
 
-export default function RequestsPage({ onNavigate }) {
+type RequestsPageProps = {
+  onNavigate?: (page: string) => void;
+};
+
+export default function RequestsPage({ onNavigate }: RequestsPageProps) {
   const [activeTab, setActiveTab] = useState("trending");
 
   const requests = [

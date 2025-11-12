@@ -3,7 +3,11 @@
 import { useState } from "react";
 import BottomNav from "@/app/components/bottom-nav";
 
-export default function IdeasPage({ onNavigate }) {
+type IdeasPageProps = {
+  onNavigate?: (page: string) => void;
+};
+
+export default function IdeasPage({ onNavigate }: IdeasPageProps) {
   const [progress, setProgress] = useState(17);
   const [formValue, setFormValue] = useState(0);
 

@@ -7,11 +7,16 @@ import IdeasPage from "@/app/components/pages/ideas-page";
 import MorePage from "@/app/components/pages/more-page";
 import CreatorProfilePage from "@/app/components/pages/creator-profile-page";
 
+type Creator = {
+  name?: string;
+  avatar?: string;
+};
+
 export default function Home() {
   const [currentPage, setCurrentPage] = useState("home");
-  const [selectedCreator, setSelectedCreator] = useState(null);
+  const [selectedCreator, setSelectedCreator] = useState<Creator | null>(null);
 
-  const navigateToCreator = (creator) => {
+  const navigateToCreator = (creator: Creator) => {
     setSelectedCreator(creator);
     setCurrentPage("creator");
   };
@@ -34,7 +39,7 @@ export default function Home() {
       case "creator":
         return (
           <CreatorProfilePage
-            creator={selectedCreator}
+            creator={selectedCreator || undefined}
             onNavigate={setCurrentPage}
             onBack={() => setCurrentPage("home")}
           />

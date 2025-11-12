@@ -1,7 +1,12 @@
 "use client";
 import { Home, FileText, Lightbulb, MoreHorizontal } from "lucide-react";
 
-export default function BottomNav({ activeTab, onNavigate }) {
+type BottomNavProps = {
+  activeTab?: string;
+  onNavigate?: (page: string) => void;
+};
+
+export default function BottomNav({ activeTab, onNavigate }: BottomNavProps) {
   const navItems = [
     { id: "home", label: "Home", icon: Home },
     { id: "requests", label: "Requests", icon: FileText },
@@ -17,7 +22,7 @@ export default function BottomNav({ activeTab, onNavigate }) {
         return (
           <button
             key={item.id}
-            onClick={() => onNavigate(item.id)}
+            onClick={() => onNavigate?.(item.id)}
             className={`flex flex-col items-center gap-1 py-2 px-2 sm:px-4 rounded-lg transition-all min-w-[60px] sm:min-w-[70px] ${
               isActive ? "text-amber-500" : "text-gray-400 hover:text-gray-600"
             }`}
