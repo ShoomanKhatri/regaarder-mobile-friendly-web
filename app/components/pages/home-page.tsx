@@ -11,7 +11,15 @@ type HomePageProps = {
   onCreatorClick?: (creator: Creator) => void;
   onNavigate?: (page: string) => void;
 };
-import { Search, Bell, Settings, MoreVertical } from "lucide-react";
+import {
+  Search,
+  Bell,
+  Settings,
+  MoreVertical,
+  Star,
+  CornerDownLeft,
+  CornerUpRight,
+} from "lucide-react";
 import BottomNav from "@/app/components/bottom-nav";
 
 export default function HomePage({
@@ -107,23 +115,6 @@ export default function HomePage({
   return (
     <div className="bg-white w-full h-full flex justify-center overflow-hidden">
       <div className="w-[90%] max-w-7xl h-full flex flex-col">
-        {/* Status Bar */}
-        <div className="bg-white py-3 flex justify-between items-center border-b border-gray-100 shrink-0">
-          <div className="flex items-center gap-2">
-            <span className="text-green-500 text-sm leading-none">●</span>
-            <span className="text-sm font-semibold text-gray-700">
-              {now.toLocaleTimeString(undefined, {
-                hour: "numeric",
-                minute: "2-digit",
-              })}
-            </span>
-          </div>
-          <div className="flex gap-2">
-            <div className="w-4 h-2 bg-black rounded-sm"></div>
-            <div className="w-6 h-3 border border-black rounded-sm"></div>
-          </div>
-        </div>
-
         {/* Header */}
         <div className="bg-white py-0 border-b border-gray-100 shrink-0">
           <div className="flex justify-between items-center">
@@ -165,26 +156,28 @@ export default function HomePage({
             style={{
               padding: activeTab === "recommended" ? "12px 40px" : "12px 32px",
             }}
-            className={`rounded-full font-medium text-sm transition-all ${
+            className={`flex items-center justify-center gap-1 rounded-full font-medium text-sm transition-all ${
               activeTab === "recommended"
                 ? "bg-amber-500 text-white shadow-lg"
                 : "bg-white text-gray-700 border border-gray-200 hover:border-gray-300"
             }`}
           >
-            ⭐ Recommended
+            <Star className="w-4 h-4 fill-yellow-500" />
+            <span>Recommended</span>
           </button>
           <button
             onClick={() => setActiveTab("trending")}
             style={{
               padding: activeTab === "trending" ? "6px 10px" : "6px 10px",
             }}
-            className={`rounded-full font-medium text-sm transition-all ${
+            className={`flex items-center justify-center gap-1 rounded-full font-medium text-sm transition-all ${
               activeTab === "trending"
                 ? "bg-amber-500 text-white shadow-lg"
                 : "bg-white text-gray-700 border border-gray-200 hover:border-gray-300"
             }`}
           >
-            → Trending Now
+            <CornerUpRight className="w-4 h-4 text-gray-600" />
+            <span>Trending Now</span>
           </button>
         </div>
 
