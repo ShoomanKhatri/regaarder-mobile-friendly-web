@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Regaarder - Video Discovery Platform",
   description: "Discover and request amazing video content from top creators",
   generator: "Regaarder 3.0",
+  themeColor: "#0f172a",
   icons: {
     icon: [
       {
@@ -15,17 +16,39 @@ export const metadata: Metadata = {
         sizes: "any",
       },
     ],
+    apple: [
+      {
+        url: "/icons/icon-192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+    ],
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
+      {/* ADD MANIFEST LINK HERE */}
+      <link rel="manifest" href="/manifest.json" />
+
       <body className={`${inter.className} font-sans antialiased`}>
+        {/* REGISTER SERVICE WORKER */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("/service-worker.js")
+                  .catch(err => console.error("SW registration failed", err));
+              }
+            `,
+          }}
+        />
+
         {children}
       </body>
     </html>
