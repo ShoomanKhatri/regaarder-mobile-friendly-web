@@ -1,11 +1,13 @@
 {
+  "id": "/",
   "name": "Regaarder",
   "short_name": "Regaarder",
   "description": "Mobile-friendly PWA version of Regaarder app",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "theme_color": "#f8f9fa",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -16,7 +18,8 @@
     {
       "src": "/icons/icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ]
 }

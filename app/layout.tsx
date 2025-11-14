@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Regaarder - Video Discovery Platform",
   description: "Discover and request amazing video content from top creators",
   generator: "Regaarder 3.0",
-  themeColor: "#0f172a",
+  themeColor: "#f8f9fa",
   icons: {
     icon: [
       {
